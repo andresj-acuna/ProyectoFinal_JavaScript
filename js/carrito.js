@@ -8,7 +8,7 @@ $(() => {
   carrito_view.totalProductosCompra();
   carrito_view.renderCarrito();
   carrito_view.renderCarritoCompra();
- 
+ filtrarRadioButton();
   console.log(carrito.getCarrito);
  
  

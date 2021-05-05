@@ -117,6 +117,209 @@ $(".categoryItems #categoryItem").click(function(){
 
 // Filtrar por checkbox
 
+
+// function filtrarRadioButton(){
+//    let filtrarRadioBtn = $(".marcas");
+   
+
+ 
+// }
+
+
+// function filtrarRadioButton(){
+
+//   if($("#radioBtn1".checked === true)){
+//     $("#radioBtn1").click(function(){
+//         let marcaProducto = $(this).attr("value");
+      
+        
+//         $(".card").hide();
+        
+//         $('.card[marca="'+marcaProducto+'"]').fadeIn(1200);
+  
+//     }
+//     )};
+  
+//  if ($("#radioBtn2".checked === true)){
+//     $("#radioBtn2").click(function(){
+//       let marcaProducto = $(this).attr("value");
+    
+      
+//       $(".card").hide();
+      
+//       $('.card[marca="'+marcaProducto+'"]').fadeIn(1200);
+  
+//   }
+//   )};
+  
+//   if ($("#radioBtn3".checked === true)){
+//     $("#radioBtn3").click(function(){
+//       let marcaProducto = $(this).attr("value");
+    
+      
+//       $(".card").hide();
+      
+//       $('.card[marca="'+marcaProducto+'"]').fadeIn(1200);
+  
+//   }
+//   )};
+
+// }
+
+// function filtrarRadioButton(){
+//   let radioButtons = $("input[type=radio]").prop("checked");
+//   switch(radioButtons){
+//     case "amd" : 
+//     $(".marcas .form-check-input").click(function(){
+//               let marcaProducto = $(this).attr("value");
+            
+              
+//               $(".card").hide();
+              
+//               $('.card[marca="'+marcaProducto+'"]').fadeIn(1200);
+        
+//           })
+
+//           break;
+
+//     case "intel" :
+
+//       $("#radioBtn2").click(function(){
+//         let marcaProducto = $(this).attr("value");
+      
+        
+//         $(".card").hide();
+        
+//         $('.card[marca="'+marcaProducto+'"]').fadeIn(1200);
+  
+//     })
+     
+//     break;
+
+
+//   }  
+// }
+
+
+function filtrarRadioButton(){
+
+  let radioButtons = ["radioBtn1", "radioBtn2", "radioBtn3", "radioBtn4", "radioBtn5", "radioBtn6"];
+  for ( let i=0;i< radioButtons.length; i++ ){
+  if($("#"+radioButtons[i].checked === true)){
+    $("#"+radioButtons[i]).click(function(){
+        let marcaProducto = $(this).attr("value");
+      
+        
+        $(".card").hide();
+        
+        $('.card[marca="'+marcaProducto+'"]').fadeIn(1200);
+  
+    }
+    )};
+  
+//  if ($("#radioBtn2".checked === true)){
+//     $("#radioBtn2").click(function(){
+//       let marcaProducto = $(this).attr("value");
+    
+      
+//       $(".card").hide();
+      
+//       $('.card[marca="'+marcaProducto+'"]').fadeIn(1200);
+  
+//   }
+//   )};
+  
+//   if ($("#radioBtn3".checked === true)){
+//     $("#radioBtn3").click(function(){
+//       let marcaProducto = $(this).attr("value");
+    
+      
+//       $(".card").hide();
+      
+//       $('.card[marca="'+marcaProducto+'"]').fadeIn(1200);
+  
+//   }
+
+//   )};
+
+}
+}
+
+
+// function filtrarRadioButton() 
+// {
+//   let radioButtons=["radioBtn1", "radioBtn2", "radioBtn3", "radioBtn4", "radioBtn5", "radioBtn6"];
+//   for ( var i=0;i< radioButtons.length; i++ )
+//   {
+
+    
+//     if ( $("#"+radioButtons[i]).checked === true)
+//     {    
+      
+//      console.log(radioButtons[i]);
+//       $("#"+radioButtons[i]).click(function(){
+//                 let marcaProducto = $(this).attr("value");
+              
+                
+//                 $(".card").hide();
+                
+//                 $('.card[marca="'+marcaProducto+'"]').fadeIn(1200);
+      
+//       })
+                  
+
+//      }
+
+     
+//   }
+// }
+
+
+
+// $("#radioBtn1").click(function(){
+//   let marcaProducto = $(this).attr("value");
+
+  
+//   $(".card").hide();
+  
+
+// if ( $("input[type=radio]").prop("checked") ) {
+//       $('.card[marca="'+marcaProducto+'"]').fadeIn(1200);
+//       console.log(marcaProducto);
+//     }
+  
+
+//   // else{
+//   //   $(".marcas .form-check .form-check-input").click(function(){            
+//   //     $('input[type="radio"]').attr("checked", "checked");
+//   // });
+//   // }
+// });
+
+
+
+// $("#radioBtn2").click(function(){
+//   let marcaProducto = $(this).attr("value");
+
+  
+//   $(".card").hide();
+  
+
+// if ( $("input[type=radio]").prop("checked") ) {
+//       $('.card[marca="'+marcaProducto+'"]').fadeIn(1200);
+//       console.log(marcaProducto);
+//     }
+  
+
+//   // else{
+//   //   $(".marcas .form-check .form-check-input").click(function(){            
+//   //     $('input[type="radio"]').attr("checked", "checked");
+//   // });
+//   // }
+// });
+
+
+
 // function filtradoCheckbox(){
 //   let filtrarCheckbox = $(".marcas");
 //   console.log(filtrarCheckbox);
