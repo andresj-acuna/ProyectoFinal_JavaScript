@@ -8,7 +8,7 @@ $(() => {
   carrito_view.totalProductosCompra();
   carrito_view.renderCarrito();
   carrito_view.renderCarritoCompra();
- filtrarRadioButton();
+  filtrarRadioButton();
   console.log(carrito.getCarrito);
  
  
@@ -17,7 +17,9 @@ $(() => {
 // Objeto Carrito
 
 function Carrito() {
-  this.catalogo = productos;
+  this.catalogo =  productos;
+  
+  
 
   // Se verifica si existe el carrito en el LocalStorage, sino existe se crea el objeto carrito.
   this.constructor = function () {
@@ -90,6 +92,10 @@ function Carrito_View() {
   this.renderCatalogo = function () {
     for (let i in carrito.catalogo) {
       // Se agregan los productos al DOM
+
+      
+
+
       $("#listaProductos").append(`
             
                 
@@ -133,10 +139,11 @@ function Carrito_View() {
        
     }
   }
+   
 
-
+   // Se agregan los productos de forma dinamica 
   this.renderCarritoCompra = function () {
-    // $(".productosCompra").html("");
+   
     for (i of carrito.getCarrito) {
       $(".productosCompra tbody").append(
         `         
@@ -150,31 +157,14 @@ function Carrito_View() {
                                         <td><button class="btnEliminarCompra"><i class="fas fa-trash" id="eliminarProducto" data-producto="${i.id}"></i></button></td>
                                         
                                       </tr>
-                
-                     
-                 
-                 
-                 
-                
-                 
-                
+
                 `
       );
     }
   }
-    //   $("body").prepend(`
-
-                                  
+ 
      
-    //   <div class="rectangulo">
-    //       <div class="textoNotificacion">
-    //       <i class="fas fa-exclamation-circle"></i>
-    //           <span>&nbsp;&nbsp;Producto agregado al carrito</span>
-    //       </div>
-    //   </div>
-      
-    //   `)
-
+  // Se agrega una notifacion al agregar o quitar un producto
     this.notificacion = function (mensaje, color) {
         const randomId = Math.random().toString(36).substring(7);
         $(".contenedorNotificacion").append(`<div class="rectangulo" id="${randomId}" style="display: none">
@@ -183,53 +173,42 @@ function Carrito_View() {
         <span>&nbsp;&nbsp;${mensaje}</span>
         </div>
         </div>`);
-
+        
+        
         $(".rectangulo").css("background-color", color).fadeIn(600).delay(4000).fadeOut(600, () => {
             $(`#${randomId}`).remove();
         });
 
-        // $("#randomId").fadeIn().delay(5000).hide();
-
-        // $(`#${randomId}`).show().delay(5000).hide(); //.delay(5000).hide();
+    
     }
  
-    //     // aparece y desaparece la notificacion
-    //     $(`#${randomId}`).css("background-color", color).show();
-    //     // $(`#${randomId}`).css("background-color", color).fadeIn(600).delay(5000).fadeOut(600, () => {
-    //     //     $(`#${randomId}`).remove();
-    //     // });
-    // }
+  
 
-
-    // $("#totalCarrito").html("");
+    // Se agrega el tota del carrito en el html
+   
     $("#totalCarrito").append(`$ ${carrito.getTotal()}`);
-    // $(".totalesCompra .totalCompras").html("");
-    // $(".totalesCompra .totalCompras").append(` $${carrito.getTotal()}`);
+   
     $(".recuadroGris").append(` $${carrito.getTotal()}`);
   
-    // $("#totalCarrito").innerHTML = "$"+carrito.getTotal();
-    console.log(carrito.getTotal());
+    // console.log(carrito.getTotal());
   
 
   // Se calcula el total de todos los productos elegidos
   this.totalProductos = function () {
     let total = carrito.getCarrito.reduce(contarCarrito, 0);
     console.log(total);
-    // contador.innerHTML = total;
+    
     $("#contador").html("");
     $("#contador").append(total);
-    // $(".totalesCompra .cantidadTotal").append(`${total}`);
+   
   };
-
+   
+  // Se agrega la cantidad total en la seccion Compra
   this.totalProductosCompra = function () {
     let total = carrito.getCarrito.reduce(contarCarrito, 0);
     console.log(total);
-    // contador.innerHTML = total;
-    // $(".totalesCompra .cantidadTotal").html("CANT. TOTAL:   ");  Este si VA
-    $(".recuadroGrisCant").html("");
-    // $(".totalesCompra .cantidadTotal").append(`${total}`);
-    // $(".totalesCompra .cantidadTotal").append(`${total}`); Este taambien VA
 
+    $(".recuadroGrisCant").html("");
     $(".recuadroGrisCant").append(`${total}`);
   };
 
@@ -279,16 +258,17 @@ $("#productosCarrito").on("click", function (ev) {
   }
 });
 
+// Se eliminan los productos en la seccion Compra
+
 $(".productosCompra tbody").on("click", function (ev) {
   ev.preventDefault();
   
   if (ev.target.id === "eliminarProducto") {
-    // carrito.eliminarItem(ev.target.dataset.producto);
+   
     carrito.eliminarItem(ev.target.dataset.producto);
     ev.target.parentElement.parentElement.parentElement.remove();
     carrito_view.totalProductosCompra();
-    // $(".totalesCompra .totalCompras").html("");
-    // $(".totalesCompra .totalCompras").append(`TOTAL: ${carrito.getTotal()}`);
+   
     $(".recuadroGris").html("");
     $(".recuadroGris").append(`${carrito.getTotal()}`);
     
@@ -296,6 +276,7 @@ $(".productosCompra tbody").on("click", function (ev) {
 });
 
 
+// Se valida que haya productos en el carrito, y que se se ingresen caracteres tanto en el input cliente como en el email
 
 $("#realizarCompra").on("click", function (ev) {
   ev.preventDefault();
@@ -317,11 +298,11 @@ else if (cliente === '' || email === ''){
   }
 else{
   
+  // Una vez que finaliza la compra, se muestra un alert con los datos del cliente, se vacia el carrito y se redirecciona al index 
 
   alert("Gracias por tu compra, " + cliente + "! " + "En instantes te llegará el detalle de la misma a: " + email);
-  // finalizar();
-  
-  $(".productosCompra tbody").fadeOut(2000);
+ 
+ $(".productosCompra tbody").fadeOut(2000);
   carrito = [];
   $(".recuadroGrisCant").html("");
   $(".recuadroGris").html("");
@@ -338,13 +319,4 @@ else{
 }
 
 });
-
-// function finalizar(ev){
-//   $(".productosCompra tbody").fadeOut(2000);
-//   // $(".recuadroGrisCant").html("");
-//   // $(".recuadroGris").html("");
-//   // $("#totalCarrito").html("");
-   
-   
-// }
 
