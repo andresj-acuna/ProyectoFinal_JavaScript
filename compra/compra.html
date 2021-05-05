@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+  <title>TechWay Compra</title>
+
+  <meta name="author" content="TechWay">
+  <meta name="copyright" content="&copy; TechWay 2021. Todos los derechos reservados.">
+  <meta name="description" content="TechWay. A otro nivel. Pagina dedicada al mundo gamer. Especializada en la venta de hardware. Nuestros clientes nos buscan porque tenemos los mejores precios en mothers, procesadores, placas de video, teclados, gabinetes, mouse, pcs armadas y mucho más.">
+  <meta name="keywords" content="Informática, PC, computadoras, teclados, placas de video, productos, mouses, motherboards, placas madre, gamer, pads, gabinetes, notebooks, computadoras de escritorio, procesadores, microprocesadores, refrigeración, refrigeración líquida, coolers, disipadores, monitores, pantallas, placas, soporte, memorias, memorias ram, discos duros, discos solidos, productos, marcas, asus, samsung, gigabyte">
+  
+  <!-- Meta Viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Favicon -->
+  <link  rel="icon"   href="../assets/img/favicon.png" type="image/png" />
+  
+  <!-- Fonts de Google -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Kufam&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- Normalize -->
+  <!-- <link rel="stylesheet" href="../../css/normalize.css"> -->
+  
+  <!-- CSS Animations -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  
+  <!-- CDN Font Awesome -->
+  <script src="https://kit.fontawesome.com/0586dfa9aa.js" crossorigin="anonymous"></script>
+
+  <!-- CDN Boostrap 4.6 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+   
+  <!-- Estilos CSS -->
+  <link rel="stylesheet"  href="../css/estilos.css">
+
+
+ 
+</head>
+
+<body class="colorFondo">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <!-- Header -->
+            <header>
+                <!-- Barra de Navegacion -->
+                <nav class="menu">
+                    <div class="container-fluid">
+                        <div class="row indexMenu">
+                            <!-- Logotipo -->
+                            <div class="col-2">
+                                <a href="../index.html" class="logo"><img src="../assets/img/logo.svg" class="" alt="Logo TechWay"></a>
+                            </div>
+                            <div class="col-1 col-md-1 col-lg-5 col-xl-5 d-flex searchBarCentrar">
+                                <div class="input-group mb-3 searchBar">
+                                    <input type="search" id="producto" placeholder="Buscar..." class="form-control">
+                                    <button class="btn-primary" id="buscar"><i class="fas fa-search"></i></button>
+                                </div>
+                            </div>
+                            <!-- Contenedor de Notificacion -->
+                          
+                            <!-- Links de navegacion -->
+                           
+                            <div class="col-9 col-md-9 col-lg-5 col-xl-5 menu-inicio">
+                            
+                           
+                                           
+                                  
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Barra de busqueda y menu desplegable -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 col-md-1 d-flex centrarBoton">
+                                <ul class="lista-menu">
+                                    <div class="contenedor-imagen">
+                                        <div class="dropdown">
+                                            <button class="btn btn-lg" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fas fa-bars"></i>
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item" href="productos.html">Notebooks</a>
+                                                <a class="dropdown-item" href="productos.html">Componentes</a>
+                                                <a class="dropdown-item" href="productos.html">Periféricos</a>
+                                                <a class="dropdown-item" href="productos.html">PC Armadas</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </div>
+                            <!-- Barra de imagenes Hardware -->
+                            <div class="col-10 imagenesHardware zoom">
+                                <div class="hardware-img">
+                                    <li><a><img src="../assets/img/proce.png" class="img-fluid" alt="Procesador"></a></li>
+                                    <p class="">Microprocesador</p>
+                                </div>
+                                <div class="hardware-img">
+                                    <li><a><img src="../assets/img/mother.png" class="img-fluid" alt="Motherboard"></a></li>
+                                    <p class="">Motherboard</p>
+                                </div>
+                                <div class="hardware-img">
+                                    <li><a><img src="../assets/img/ram.png" class="ram img-fluid" alt="Memoria RAM"></a></li>
+                                    <p class="">Memoria RAM</p>
+                                </div>
+                                <div class="hardware-img">
+                                    <li><a><img src="../assets/img/gpu.png" class="img-fluid" alt="Placa de Video"></a></li>
+                                    <p>Placa de Video</p>
+                                </div>
+                                <div class="hardware-img">
+                                    <li><a><img src="../assets/img/hd2.png" class="img-fluid" alt="Disco Duro"></a></li>
+                                    <p class="">Almacenamiento</p>
+                                </div>
+                                <div class="hardware-img">
+                                    <li><a><img src="../assets/img/fuente-alimentacion.png" class="img-fluid" alt="Fuente"></a></li>
+                                    <p class="">Fuente</p>
+                                </div>
+                                <div class="hardware-img">
+                                    <li><a><img src="../assets/img/monitor-ico.png" class="img-fluid" alt="Monitor"></a></li>
+                                    <p class="">Monitor</p>
+                                </div>
+                            </div>
+                        
+                       
+                    </div>
+                    </div>
+                </nav>
+            </header>
+            <!-- Seccion Productos -->
+            
+            <section>
+                <div class="container">
+                    <div class="row sectionCompra">
+                        <div class="col col-xl-12">
+                            <h1 class="tituloCompra">Pro<span>ceso de Com</span>pra</h1>
+                            <form>
+                                <div class="form-row">
+                                  <div class="col-4">
+                                    <input type="text" class="form-control" id="cliente" placeholder="Cliente">
+                                  </div>
+                                  <div class="col-4">
+                                    <input type="email" class="form-control" id="email" placeholder="Email">
+                                  </div>
+                                </div>
+                              </form>
+                              <!-- <hr> -->
+                              <!-- <div class="row productosCompra"> -->
+                                <!-- <div class="col-2"><p>Producto</p></div>
+                                <div class="col-2"><p>Nombre</p></div>
+                                <div class="col-2"><p>Precio</p></div>
+                                <div class="col-2"><p>Cant</p></div>
+                                <div class="col-2"><p>Sub Total</p></div>
+                                <div class="col-2"><p>Quitar</p></div>
+                                </div> -->
+                                <table class="table productosCompra">
+                                   
+                                    <thead>
+                                      <tr>
+                                        <td>Producto</td>
+                                        <td>Nombre</td>
+                                        <td>Precio</td>
+                                        <td>Cant.</td>
+                                        <td>Sub Total</td>
+                                        <td>Quitar</td>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      
+                                    </tbody>
+                                    
+                                    
+                                  
+                                  </table>
+                                  <div class="row justify-content-center">
+                                   <div class="col-3 botonesCompra">
+                                 
+                                      <div class="contenedorTotales">
+                                        <div class="tituloResumen text-center">Resumen de tu compra:</div>
+                                      
+                                      <table class="contenidoTotales">
+                                          <tbody>
+                                            <tr class="cantidad">
+                                                <td class="texto-destacado">Cantidad:</td>
+                                                <td>
+                                                <div class="recuadroGrisCant"></div>
+                                              </td>
+                                            </tr>
+                                          <tr class="subtotal">
+                                              <td class="texto-destacado">Subtotal:</td>
+                                              <td>
+                                              <div class="recuadroGris"></div>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                          <td colspan="2">
+                                              <hr class="separadorTotales">
+                                          </td> 
+                                        </tr>
+                                          <tr class="total">   
+                                          <td class="texto-destacado">Total:</td>
+                                          <td><div class="recuadroGris textoTotal"></div></td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                      <div class="row">
+                                          
+                                      <button class="btn btn-info btnAgregarProductos" onclick="location.href='../index.html'">Agregar más productos</button>
+                                   
+                                    
+                                      <button class="btn btn-success" id="realizarCompra">Realizar Compra</button>
+                                    
+                                    </div>
+                                  </div>
+
+                                  
+                                </div>  
+                            </div>
+
+                                  <!-- <table class="table totalesCompra">
+                                      <tr class="botonesCompra">
+                                          <td></td>
+                                          <td> <button class="btn btn-primary">Seguir comprando</button></td>
+                                          <td></td>
+                                          <td class="cantidadTotal">CANT. TOTAL:</td>
+                                          <td class="totalCompras">TOTAL:</td>
+                                          <td><button class="btn btn-primary">Realizar Compra</button</td>
+                                      </tr>
+                                  </table> -->
+                                  <!-- <div class="row totalesCompra"> -->
+                                  <!-- <div class="col-4"></div> -->
+                                  <!-- <div class="col-7 cantidadTotal">CANT. TOTAL:</div> -->
+                                  <!-- <div class="col-8"></div> -->
+                                  <!-- <div class="col-12 subTotal">SUB TOTAL:</div> -->
+                                  <!-- <div class="col-8"></div> -->
+                                  <!-- <div class="col-5 totalCompras"><span>TOTAL:</span></div> -->
+                                  <!-- <div class="col-2"></div> -->
+                                <!-- </div> -->
+                                  <!-- <div class="row">
+                                  <div><h3>SUB TOTAL</h3></div>
+                                  
+                            
+                                    <div><h3>TOTAL</h3></div>
+                             </div> -->
+                             <!-- </div> -->
+                             <!-- <div class="row botonesCompra"> -->
+                                <!-- <div class="col-6"> <button class="btn btn-primary">Seguir comprando</button></div>
+                              <div class="col-6"><button class="btn btn-primary">Realizar Compra</button></div> -->
+                            <!-- </div> -->
+                            </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Footer -->
+            
+            
+            <footer>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <nav class="navbar navbar-expand-lg navbar-dark">
+                                <div class="collapse navbar-collapse list-footer" id="navbarNav">
+                                    <ul class="navbar-nav mx-auto">
+                                        <li class="nav-item">
+                                            <a class="nav-link  margenListado" href="#">Quiénes somos</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link  margenListado" href="#">Términos y condiciones</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link  margenListado" href="#">Política de privacidad</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link  margenListado" href="#">Promociones y sorteos</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </nav>
+                            <div class="text-center white p-3">
+                                <p class="copyright">© 2021 Copyright - TechWay</p>
+                            </div>
+                            <div class="redes">
+                                <ul class="redes-sociales">
+                                    <li><i class="fa fa-facebook"></i></li>
+                                    <li><i class="fa fa-twitter"></i></li>
+                                    <li><i class="fa fa-youtube"></i></li>
+                                    <li><i class="fa fa-tumblr"></i></li>
+                                    <li><i class="fab fa-whatsapp"></i></li>
+                                </ul>
+                            </div>
+            </footer>
+        </div>
+    </div>
+</div>
+<!-- JS Query CDN -->
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<!-- Boostrap 4.6 CDN -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<!-- Scripts -->
+<script src="../js/productos.js"></script>
+<!-- <script src="js/carrito3.js"></script> -->
+<!-- <script src="js/carrito2.js"></script> -->
+<script src="../js/carrito.js"></script>
+<script src="../js/main.js"></script>
+
+</body>
+
+</html>

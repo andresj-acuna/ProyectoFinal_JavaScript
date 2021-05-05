@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+  <title>TechWay Productos</title>
+
+  <meta name="author" content="TechWay">
+  <meta name="copyright" content="&copy; TechWay 2021. Todos los derechos reservados.">
+  <meta name="description" content="TechWay. A otro nivel. Pagina dedicada al mundo gamer. Especializada en la venta de hardware. Nuestros clientes nos buscan porque tenemos los mejores precios en mothers, procesadores, placas de video, teclados, gabinetes, mouse, pcs armadas y mucho más.">
+  <meta name="keywords" content="Informática, PC, computadoras, teclados, placas de video, productos, mouses, motherboards, placas madre, gamer, pads, gabinetes, notebooks, computadoras de escritorio, procesadores, microprocesadores, refrigeración, refrigeración líquida, coolers, disipadores, monitores, pantallas, placas, soporte, memorias, memorias ram, discos duros, discos solidos, productos, marcas, asus, samsung, gigabyte">
+  
+  <!-- Meta Viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Favicon -->
+  <link  rel="icon"   href="assets/img/favicon.png" type="image/png" />
+  
+  <!-- Fonts de Google -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Kufam&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- Normalize -->
+  <!-- <link rel="stylesheet" href="../../css/normalize.css"> -->
+  
+  <!-- CSS Animations -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  
+  <!-- CDN Font Awesome -->
+  <script src="https://kit.fontawesome.com/0586dfa9aa.js" crossorigin="anonymous"></script>
+
+  <!-- CDN Boostrap 4.6 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+   
+  <!-- Estilos CSS -->
+  <link rel="stylesheet"  href="css/estilos.css">
+
+
+ 
+</head>
+
+<body class="colorFondo">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <!-- Header -->
+            <header>
+                <!-- Barra de Navegacion -->
+                <nav class="menu">
+                    <div class="container-fluid">
+                        <div class="row indexMenu">
+                            <!-- Logotipo -->
+                            <div class="col-2">
+                                <a href="index.html" class="logo"><img src="assets/img/logo.svg" class="" alt="Logo TechWay"></a>
+                            </div>
+                            <div class="col-1 col-md-1 col-lg-5 col-xl-5 d-flex searchBarCentrar">
+                                <div class="input-group mb-3 searchBar">
+                                    <input type="search" id="producto" placeholder="Buscar..." class="form-control">
+                                    <button class="btn-primary" id="buscar"><i class="fas fa-search"></i></button>
+                                </div>
+                            </div>
+                            <!-- Contenedor de Notificacion -->
+                          
+                            <!-- Links de navegacion -->
+                            <div class="col-9 col-md-9 col-lg-5 col-xl-5 menu-inicio">
+                                <ul class="lista-menu">
+                                    <li class="link-activ"><i class="fa fa-sign-in"></i><a href="#">Ingresar</a></li>
+                                    <li><i class="fa fa-plus-square"></i><a href="#">Registrarse</a></li>
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-6">
+                                        <a href="#" class="carrito" id="btnCarrito" data-toggle="modal" data-target="#carritoModal"><i class="fa fa-cart-plus" style="font-size:20px"></i></a>
+                                    </div>
+                                    <div class="col-6">
+                                        <span id="contador">0</span>
+                                    </div>
+                                    </div>
+                                        <div class="modal fade" id="carritoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg" class="modal">
+                                              <div class="modal-content" id="carritoModalContent">
+                                                <div class="modal-header">
+                                                  <h3 class="modal-title text-center" id="exampleModalLabel">¡Se agregó el producto a tu carrito!</h3>
+                                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                  </button>
+                                                </div>
+                                                <div class="modal-body" id="listaCarrito">
+                                                    <div class="container-fluid">
+                                                    <div class="row">
+                                                        <div class="col-2"><p>Producto</p></div>
+                                                        <div class="col-2"><p>Nombre</p></div>
+                                                        <div class="col-2"><p>Precio</p></div>
+                                                        <div class="col-2"><p>Cant.</p></div>
+                                                        <div class="col-2"><p>Sub Total</p></div>
+                                                        <div class="col-2"><p>Quitar</p></div>
+                                                    </div>
+                                                    <div class="row" id="productosCarrito">
+
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-9 d-flex justify-content-end contenedorTotalModal"><h1 class="totalModal">TOTAL: </h1></div>
+                                                        <div class="col-3 d-flex justify-content-center" id="totalCarrito"><h2><strong></strong></h2></div>
+                                                    </div>
+                                                <div class="modal-footer">
+                                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                                  <button type="button" onclick="location.href='compra/compra.html'" class="btn btn-success">Comprar</button>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                       
+                           
+                                           
+                                    
+                                    </li>
+                                    
+                                </ul>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Barra de busqueda y menu desplegable -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 col-md-1 d-flex centrarBoton">
+                                <ul class="lista-menu">
+                                    <div class="contenedor-imagen">
+                                        <div class="dropdown">
+                                            <button class="btn btn-lg" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fas fa-bars"></i>
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item" href="productos.html">Notebooks</a>
+                                                <a class="dropdown-item" href="productos.html">Componentes</a>
+                                                <a class="dropdown-item" href="productos.html">Periféricos</a>
+                                                <a class="dropdown-item" href="productos.html">PC Armadas</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </div>
+                            <!-- Barra de imagenes Hardware -->
+                            <div class="col-10 imagenesHardware zoom">
+                                <div class="hardware-img">
+                                    <li><a><img src="assets/img/proce.png" class="img-fluid" alt="Procesador"></a></li>
+                                    <p class="">Microprocesador</p>
+                                </div>
+                                <div class="hardware-img">
+                                    <li><a><img src="assets/img/mother.png" class="img-fluid" alt="Motherboard"></a></li>
+                                    <p class="">Motherboard</p>
+                                </div>
+                                <div class="hardware-img">
+                                    <li><a><img src="assets/img/ram.png" class="ram img-fluid" alt="Memoria RAM"></a></li>
+                                    <p class="">Memoria RAM</p>
+                                </div>
+                                <div class="hardware-img">
+                                    <li><a><img src="assets/img/gpu.png" class="img-fluid" alt="Placa de Video"></a></li>
+                                    <p>Placa de Video</p>
+                                </div>
+                                <div class="hardware-img">
+                                    <li><a><img src="assets/img/hd2.png" class="img-fluid" alt="Disco Duro"></a></li>
+                                    <p class="">Almacenamiento</p>
+                                </div>
+                                <div class="hardware-img">
+                                    <li><a><img src="assets/img/fuente-alimentacion.png" class="img-fluid" alt="Fuente"></a></li>
+                                    <p class="">Fuente</p>
+                                </div>
+                                <div class="hardware-img">
+                                    <li><a><img src="assets/img/monitor-ico.png" class="img-fluid" alt="Monitor"></a></li>
+                                    <p class="">Monitor</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <!-- Seccion Productos -->
+            
+            <section>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col col-xl-12">
+                            <div class="row contenedorProductos">
+                                <div class="titulosProductos">
+                                    <h2>Productos</h2>
+                                    <hr>
+                                    <h4>Categorias</h4>
+                                    <hr>
+                                    <ul class="categoryItems">
+                                        <li><a href="#" id="categoryItem" category="todos">Ver todos</a></li>
+                                        <li><a href="#" id="categoryItem" category="procesador">Microprocesadores</a></li>
+                                        <li><a href="#" id="categoryItem" category="memoria">Memorias</a></li>
+                                        <li><a href="#" id="categoryItem" category="motherboard">Motherboards</a></li>
+                                        <li><a href="#" id="categoryItem" category="gpu">Placas de Video</a></li>
+                                    </ul>
+                                    <h4 class="marcas">Marcas</h4>
+                                    <hr>
+                                    <div>
+                                        <ul>
+                                            <div class="marcas">
+                                                <li> <input type="checkbox" name="marca" id="cbox1" value="amd"><span class="checkmark"></span> <label for="amd">AMD</label> </li>
+                                                <li> <input type="checkbox" name="marca" id="cbox2" value="intel"> <span class="checkmark"></span><label for="intel">Intel</label> </li>
+                                                <li> <input type="checkbox" name="marca" id="cbox3" value="asus"> <span class="checkmark"></span><label for="asus">ASUS</label> </li>
+                                                <li> <input type="checkbox" name="marca" id="cbox4" value="gigabyte"> <span class="checkmark"></span><label for="gigabyte">Gigabyte</label> </li>
+                                                <li> <input type="checkbox" name="marca" id="cbox5" value="nvidia"> <span class="checkmark"></span><label for="nvidia">Nvidia</label> </li>
+                                                <li> <input type="checkbox" name="marca" id="cbox6" value="evga"> <span class="checkmark"></span><label for="evga">EVGA</label> </li>
+                                            </div>
+                                        </ul>
+                                        <div class="contenedorNotificacion"></div>
+                                    </div>
+                                   
+                                </div>
+                                <!-- Cards con imagenes de Productos -->
+                           
+                                <div class="imagenesProductos">
+                                    
+                                    <ul id="listaProductos">
+                                       
+                                         
+                                        
+                                        <!-- <li>
+                                            <div class="card" id="1">
+                                                <img src="assets/img/ryzen-3.jpg" class="card-img-center img-fluid" alt="Micro AMD Ryzen 3 2200G">
+                                                <div class="card-body">
+                                                    <p>MICRO AMD RYZEN 3 2200G 3.7 GHZ AM4</p>
+                                                    <span>ARS $10523.03</span>
+                                                    <a href="#" class="btn btn-primary agregarCarrito" id="botonCarrito">Agregar</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li> 
+                                            <div class="card" id="2">
+                                                <img src="assets/img/ryzen-5.jpg" class="card-img-center img-fluid" alt="Micro AMD Ryzen 5 3600">
+                                                <div class="card-body">
+                                                    <p>MICRO AMD RYZEN 5 3600 4.2 GHZ AM4</p>
+                                                    <span>ARS $27471.92</span>
+                                                    <a href="#" class="btn btn-primary agregarCarrito">Agregar</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="card" id="3">
+                                                <img src="assets/img/ryzen-7.jpg" class="card-img-center img-fluid zoom" alt="Micro AMD Ryzen 7 3700X">
+                                                <div class="card-body">
+                                                    <p>MICRO AMD RYZEN 7 3700X 4.4 GHZ AM4</p>
+                                                    <span>ARS $41220.02</span>
+                                                    <a href="#" class="btn btn-primary agregarCarrito">Agregar</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="card" id="4">
+                                                <img src="assets/img/i3.jpg" class="card-img-center img-fluid zoom" alt="Micro INTEL I3-10100">
+                                                <div class="card-body">
+                                                    <p>MICRO INTEL I3-10100 4.3GHZ 6MB</p>
+                                                    <span>ARS $13907.84</span>
+                                                    <a href="#" class="btn btn-primary agregarCarrito">Agregar</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>  
+                                            <div class="card" id="5">
+                                                <img src="assets/img/i5.jpg" class="card-img-center img-fluid zoom" alt="Micro INTEL I5-9400F">
+                                                <div class="card-body">
+                                                    <p>MICRO INTEL I5-9400F 4.1GHZ 9MB</p>
+                                                    <span>ARS $15709.47</span>
+                                                    <a href="#" class="btn btn-primary agregarCarrito">Agregar</a>
+                                                </div>
+                                            </div>
+                                         </li> 
+                                         <li>
+                                            <div class="card" id="6">
+                                                <img src="assets/img/i7.jpg" class="card-img-center img-fluid zoom" alt="Micro INTEL I7-10700K">
+                                                <div class="card-body">
+                                                    <p>MICRO INTEL I7-10700K 5.1GHZ 16MB</p>
+                                                    <span>ARS $44786.49</span>
+                                                    <a href="#" class="btn btn-primary agregarCarrito">Agregar</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="card" id="7">
+                                                <img src="assets/img/memoria-corsair.jpg" class="card-img-center img-fluid zoom" alt="Memoria Ram 16GB Corsair Vengeance RGB">
+                                                <div class="card-body">
+                                                    <p>MEMORIA RAM 16GB 3000 DDR4 CORSAIR 2X8GB VENGEANCE RGB PRO</p>
+                                                    <span>ARS $22235.85</span>
+                                                    <a href="#" class="btn btn-primary agregarCarrito">Agregar</a>
+                                                </div>
+                                            </div> 
+                                        </li>
+                                        <li>
+                                            <div class="card" id="8">
+                                                <img src="assets/img/memoria-predator.jpg" class="card-img-center img-fluid zoom" alt="Memoria Ram Kingston HyperX Fury 16GB">
+                                                <div class="card-body">
+                                                    <p>MEMORIA RAM KINGSTON HYPERX FURY RGB 16GB 3200 MHZ DDR4</p>
+                                                    <span>ARS $10726.34</span>
+                                                    <a href="#" class="btn btn-primary agregarCarrito">Agregar</a>
+                                                </div>
+                                            </div> 
+                                        </li>
+                                        <li>
+                                            <div class="card" id="9">
+                                                <img src="assets/img/memoria-patriot.jpg" class="card-img-center img-fluid zoom" alt="Memoria Ram Patriot Premium 16GB">
+                                                <div class="card-body">
+                                                    <p>MEMORIA RAM PATRIOT PREMIUM 16GB 3200 MHZ DDR4</p>
+                                                    <span>ARS $9068.43</span>
+                                                    <a href="#" class="btn btn-primary agregarCarrito">Agregar</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="card" id="10">
+                                                <img src="assets/img/asus-tuf.jpg" class="card-img-center img-fluid zoom" alt="Motherboard ASUS B450M TUF AM4">
+                                                <div class="card-body">
+                                                    <p>MOTHERBOARD ASUS B450M TUF PLUS II GAMING AM4</p>
+                                                    <span>ARS $12399.23</span>
+                                                    <a href="#" class="btn btn-primary agregarCarrito">Agregar</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="card" id="11">
+                                                <img src="assets/img/asus-rog.jpg" class="card-img-center img-fluid zoom" alt="Motherboard ASUS B550 F ROG Strix AM4">
+                                                <div class="card-body">
+                                                    <p>MOTHERBOARD ASUS B550 F ROG STRIX GAMING WIFI AM4</p>
+                                                    <span>ARS $27018.05</span>
+                                                    <a href="#" class="btn btn-primary agregarCarrito">Agregar</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="card" id="12">
+                                                <img src="assets/img/giga-aorus.jpg" class="card-img-center img-fluid zoom" alt="Motherboard Gigabyte Z490 AORUS ULTRA">
+                                                <div class="card-body">
+                                                    <p>MOTHERBOARD GIGABYTE Z490 AORUS ULTRA 1200</p>
+                                                    <span>ARS $50105.07</span>
+                                                    <a href="#" class="btn btn-primary agregarCarrito">Agregar</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="card" id="13">
+                                                <img src="assets/img/gt1030.jpg" class="card-img-center img-fluid zoom" alt="Placa de Video Gigabyte Nvidia GeForce GT 1030">
+                                                <div class="card-body">
+                                                    <p>PLACA DE VIDEO GIGABYTE NVIDIA GEFORCE GT 1030 2GB OC DDR5</p>
+                                                    <span>ARS $11019.98</span>
+                                                    <a href="#" class="btn btn-primary agregarCarrito">Agregar</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="card" id="14">
+                                                <img src="assets/img/gtx1050ti.jpg" class="card-img-center img-fluid zoom" alt="Placa de Video MSI Nvidia GeForce GTX 1050 TI">
+                                                <div class="card-body">
+                                                    <p>PLACA DE VIDEO MSI NVIDIA GEFORCE GTX 1050 TI OC 4GB GDDR5</p>
+                                                    <span>ARS $24167.97</span>
+                                                    <a href="#" class="btn btn-primary agregarCarrito">Agregar</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="card" id="15">
+                                                <img src="assets/img/gtx1650.jpg" class="card-img-center img-fluid zoom" alt="Placa de Video PNY GeForce GTX 1650">
+                                                <div class="card-body">
+                                                    <p>PLACA DE VIDEO PNY GEFORCE GTX 1650 4GB GDDR6 DUAL FAN</p>
+                                                    <span>ARS $41992.10</span>
+                                                    <a href="#" class="btn btn-primary agregarCarrito">Agregar</a>
+                                                </div>
+                                            </div>
+                                        </li> -->
+                                    </ul>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Footer -->
+            
+            
+            <footer>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <nav class="navbar navbar-expand-lg navbar-dark">
+                                <div class="collapse navbar-collapse list-footer" id="navbarNav">
+                                    <ul class="navbar-nav mx-auto">
+                                        <li class="nav-item">
+                                            <a class="nav-link  margenListado" href="#">Quiénes somos</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link  margenListado" href="#">Términos y condiciones</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link  margenListado" href="#">Política de privacidad</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link  margenListado" href="#">Promociones y sorteos</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </nav>
+                            <div class="text-center white p-3">
+                                <p class="copyright">© 2021 Copyright - TechWay</p>
+                            </div>
+                            <div class="redes">
+                                <ul class="redes-sociales">
+                                    <li><i class="fa fa-facebook"></i></li>
+                                    <li><i class="fa fa-twitter"></i></li>
+                                    <li><i class="fa fa-youtube"></i></li>
+                                    <li><i class="fa fa-tumblr"></i></li>
+                                    <li><i class="fab fa-whatsapp"></i></li>
+                                </ul>
+                            </div>
+            </footer>
+        </div>
+    </div>
+</div>
+<!-- JS Query CDN -->
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<!-- Boostrap 4.6 CDN -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+<!-- Scripts -->
+<script src="js/productos.js"></script>
+<!-- <script src="js/carrito3.js"></script> -->
+<!-- <script src="js/carrito2.js"></script> -->
+<script src="js/carrito.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+
+</html>
