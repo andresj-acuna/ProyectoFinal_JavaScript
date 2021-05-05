@@ -9,9 +9,7 @@ $(() => {
   carrito_view.renderCarrito();
   carrito_view.renderCarritoCompra();
   filtrarRadioButton();
-  console.log(carrito.getCarrito);
- 
- 
+  
 });
 
 // Objeto Carrito
@@ -19,9 +17,7 @@ $(() => {
 function Carrito() {
   this.catalogo =  productos;
   
-  
-
-  // Se verifica si existe el carrito en el LocalStorage, sino existe se crea el objeto carrito.
+ // Se verifica si existe el carrito en el LocalStorage, sino existe se crea el objeto carrito.
   this.constructor = function () {
     if (!localStorage.getItem("carrito")) {
       localStorage.setItem("carrito", "[]");
@@ -49,7 +45,7 @@ function Carrito() {
     for (i of this.getCarrito) {
       if (i.id === item) {
         i.cantidad++;
-        console.log(this.getCarrito);
+       
 
         localStorage.setItem("carrito", JSON.stringify(this.getCarrito));
         return;
@@ -60,7 +56,7 @@ function Carrito() {
 
     this.getCarrito.push(registro);
 
-    console.log(this.getCarrito);
+  
     localStorage.setItem("carrito", JSON.stringify(this.getCarrito));
   };
 
@@ -190,14 +186,11 @@ function Carrito_View() {
    
     $(".recuadroGris").append(` $${carrito.getTotal()}`);
   
-    // console.log(carrito.getTotal());
-  
 
   // Se calcula el total de todos los productos elegidos
   this.totalProductos = function () {
     let total = carrito.getCarrito.reduce(contarCarrito, 0);
-    console.log(total);
-    
+  
     $("#contador").html("");
     $("#contador").append(total);
    
@@ -206,8 +199,7 @@ function Carrito_View() {
   // Se agrega la cantidad total en la seccion Compra
   this.totalProductosCompra = function () {
     let total = carrito.getCarrito.reduce(contarCarrito, 0);
-    console.log(total);
-
+   
     $(".recuadroGrisCant").html("");
     $(".recuadroGrisCant").append(`${total}`);
   };

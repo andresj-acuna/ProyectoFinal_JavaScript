@@ -31,8 +31,6 @@ function agregarProducto(producto){
 
 function borrarProductos(){
   $("#listaProductos").html("");
-  // $("#listaProductos").hide();
-  
 }
 
 // Se guardan los productos buscados en el LocalStorage
